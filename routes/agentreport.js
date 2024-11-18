@@ -8,7 +8,7 @@ import { isAuthenticated } from "../middlewares/auth.js";
 const agentReportRouter = Router();
 
 // Define route
-agentReportRouter.post('/agents/report', reportImageUpload.single("image"),addAgentReport); // Users can only report incidents
+agentReportRouter.post('/agents/report', reportImageUpload.single("image"), isAuthenticated,addAgentReport); // Users can only report incidents
 agentReportRouter.get('/agents/reports',getAgentReports);
 
 
