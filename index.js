@@ -23,7 +23,7 @@ app.use(userReportRouter);
 app.use(agentReportRouter)
 
 // Listen for incoming requests
-app.listen(5050, () => {
+app.listen(process.env.PORT || 5050, () => {
     console.log('App is listening on port 5050');
 });
 
