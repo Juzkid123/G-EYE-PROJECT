@@ -9,7 +9,7 @@ const agentReportRouter = Router();
 
 // Define route
 agentReportRouter.post('/agents/report', reportImageUpload.single("image"), isAuthenticated,addAgentReport); // Users can only report incidents
-agentReportRouter.get('/agents/reports',getAgentReports);
+agentReportRouter.get('/agents/reports', isAuthenticated,getAgentReports);
 
 
 // Export router

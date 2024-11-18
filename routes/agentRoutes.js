@@ -8,7 +8,7 @@ import {
 } from "../controllers/agentController.js";
 import { agentAvatarUpload, reportImageUpload } from "../middlewares/upload.js";
 import { isAuthenticated} from "../middlewares/auth.js";
-import { addAgentReport, getAgentReports } from "../controllers/agentreport.js";
+
 
 // Create router
 const agentRouter = Router();
@@ -18,8 +18,6 @@ agentRouter.post('/agents/register', registerAgent);
 
 // Agent login
 agentRouter.post('/agents/login', loginAgent);
-agentRouter.post('/agents/report', reportImageUpload.single("image"),addAgentReport )
-agentRouter.get('/agents/reports',getAgentReports);
 
 // Get agent profile (protected)
 agentRouter.get('/agents/me', isAuthenticated, getProfile);
