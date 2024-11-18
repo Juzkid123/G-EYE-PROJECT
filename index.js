@@ -4,7 +4,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import userReportRouter from './models/userreport.js';
 import agentRouter from './routes/agentRoutes.js';
-import agentReportRouter from './routes/agentReport.js';
+import agentReportRouter from './routes/agentreport.js';
 
 
 // Connect to database
