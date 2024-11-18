@@ -7,7 +7,7 @@ import { agentAvatarUpload } from "../middlewares/upload.js";
 const agentReportRouter = Router();
 
 // Define route
-agentReportRouter.post('/agents/report',agentAvatarUpload,addAgentReport); // Users can only report incidents
+agentReportRouter.post('/agents/report',agentAvatarUpload.single("image"),addAgentReport); // Users can only report incidents
 agentReportRouter.get('/agents/reports',getAgentReports);
 
 

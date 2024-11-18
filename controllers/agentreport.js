@@ -1,4 +1,4 @@
-import Report from "../models/agentreportmodel.js"
+import agentReportRouter from "../routes/agentreport.js";
 import { agentReportValidator} from "../validators/agentreport.js"
 
 export const addAgentReport = async (req,res,next) => {
