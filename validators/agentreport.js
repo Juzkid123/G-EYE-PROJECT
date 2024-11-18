@@ -9,11 +9,11 @@ export const agentReportValidator = Joi.object({
   location: Joi.string().required(),
   map: Joi.string().required(),
   image: Joi.string().required(),
-  statusUpdate: Joi.string().required(),
-  actionsTaken: Joi.string().required(),
+  statusUpdate: Joi.string(),
+  actionsTaken: Joi.string(),
   notes: Joi.string().required(),
-  attachments: Joi.string().required()
-})
+  attachments: Joi.string()
+}).unknown()
 
 export const updateAgentreportValidator = Joi.object({
   description: Joi.string(),

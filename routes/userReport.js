@@ -7,8 +7,8 @@ import { addUserReport, getUserReports } from "../controllers/userreport.js";
 const userReportRouter = Router();
 
 // Define route
-userReportRouter.post('/users/report',reportImageUpload.single('image'),addUserReport); // Users can only report incidents
-userReportRouter.get('/users/reports',getUserReports);
+userReportRouter.post('/users/report',reportImageUpload.single('image'), addUserReport); // Users can only report incidents
+userReportRouter.get('/users/reports', getUserReports);
 
 
 // Export router

@@ -1,12 +1,12 @@
 import multer from "multer";
 import { multerSaveFilesOrg } from "multer-savefilesorg";
 // import path from "path";
-export const localUpload = multer({ dest: 'uploads/'});
+// export const localUpload = multer({ dest: 'uploads/'});
 
 export const reportImageUpload = multer({
   storage: multerSaveFilesOrg({
-    apiAccessToken: process.env.SAVEFILESORG_API_KEY,
-        relativePath: '/G-eye/user/*'
+    apiAccessToken: process.env.SAVEVEFILEORG_API_KEY,
+    relativePath: '/G-eye/user/*'
   }),
   preservePath: true
 });
@@ -16,7 +16,7 @@ export const reportImageUpload = multer({
 export const agentAvatarUpload = multer({
   storage: multerSaveFilesOrg({
     apiAccessToken: process.env.SAVEFILESORG_API_KEY,
-        relativePath: '/G-eye/agent/*'
+    relativePath: '/G-eye/agent/*'
   }),
   preservePath: true
 });
@@ -25,11 +25,11 @@ export const agentAvatarUpload = multer({
 // // Configure storage for uploaded files
 // const storage = multer.diskStorage({
 //   destination: (req, file, cb) => {
-//     cb(null, "uploads/"); 
+//     cb(null, "uploads/");
 //   },
 //   filename: (req, file, cb) => {
 //     const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
-//     cb(null, `${file.fieldname}-${uniqueSuffix}${path.extname(file.originalname)}`); 
+//     cb(null, `${file.fieldname}-${uniqueSuffix}${path.extname(file.originalname)}`);
 //   },
 // });
 
@@ -37,7 +37,7 @@ export const agentAvatarUpload = multer({
 // const fileFilter = (req, file, cb) => {
 //   const allowedTypes = ["image/jpeg", "image/png", "image/jpg"];
 //   if (allowedTypes.includes(file.mimetype)) {
-//     cb(null, true); 
+//     cb(null, true);
 //   } else {
 //     cb(new Error("Only .jpeg, .jpg, and .png files are allowed"), false);
 //   }
