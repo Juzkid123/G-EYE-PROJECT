@@ -1,4 +1,4 @@
-import agentReportRouter from "../routes/agentreport.js";
+import {AgentReportModel} from "../models/agentreportmodel.js"
 import { agentReportValidator} from "../validators/agentreport.js"
 
 export const addAgentReport = async (req,res,next) => {
@@ -12,7 +12,7 @@ try {
     return res.status(422).json(error);
   }
   //Write agent to database
-  await Report.create(value);
+  await AgentReportModel.create(value);
   //Respond to request
   res.status(201).json("report was Added!");
   } catch (error) {
@@ -23,13 +23,13 @@ try {
 export const getAgentReports = async (req, res, next) => {
   try {
       const { filter = "{}", limit = 10, skip = 0 } = req.query;
-      // Fetch Agent from database
-      const report = await userReport
+      // Fetch Agent report from database
+      const AgentReportModel = await userReport
           .find(JSON.parse(filter))
           .limit(limit)
           .skip(skip);
       // Return response
-      res.status(200).json(report);
+      res.status(200).json(AgentReportModel);
   } catch (error) {
       next(error);
   }
