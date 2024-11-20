@@ -4,8 +4,8 @@ export const userReportValidator = Joi.object({
     title: Joi.string().required(),
     dateReported: Joi.string().required(),
     description: Joi.string().required(),
-    image: Joi.string().required(),
+    image: Joi.string(),
     location: Joi.string().required(),
     map: Joi.string().required()
 
-})
+}).unknown()

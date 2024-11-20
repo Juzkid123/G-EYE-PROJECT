@@ -8,7 +8,7 @@ import agentReportRouter from './routes/agentreport.js';
 
 
 // Connect to database
-await mongoose.connect(process.env.MONGO_URI);
+await mongoose.connect(process.env.MONGO_URI).then(() => console.log("Db connected successfully")).catch(error => console.log("Error connecting DB", error))
 
 // Create an express app
 const app = express();

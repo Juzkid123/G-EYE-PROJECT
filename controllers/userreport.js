@@ -11,8 +11,9 @@ try {
   if (error) {
     return res.status(422).json(error);
   }
-  //Write user to database
-  await UserModel.create(value);
+  //Write user to database 
+  user
+  await userReport.create(value);
   //Respond to request
   res.status(201).json("report was Added!");
   } catch (error) {

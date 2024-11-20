@@ -8,6 +8,8 @@ import {
 } from "../controllers/agentController.js";
 import { agentAvatarUpload, reportImageUpload } from "../middlewares/upload.js";
 import { isAuthenticated} from "../middlewares/auth.js";
+import { addAgentReport, getAgentReports } from "../controllers/agentreport.js";
+import { addUserReport, getUserReports } from "../controllers/userreport.js";
 
 
 // Create router
@@ -32,6 +34,13 @@ agentRouter.patch(
   agentAvatarUpload.single('avatar'),
   updateProfile
 );
+
+agentRouter.post('/agents/report', reportImageUpload.single("image"), isAuthenticated,addAgentReport); // Users can only report incidents
+agentRouter.get('/agents/reports', isAuthenticated,getAgentReports); 
+
+agentRouter.get('/users/reports', getUserReports);
+agentRouter.post('/users/report',reportImageUpload.single('image'), addUserReport); // Users can only report incidents
+
 
 // Export router
 export default agentRouter;
