@@ -6,13 +6,13 @@ try {
   //validate user inputs
   const {error, value} = userReportValidator.validate({
     ...req.body,
-    icon: req.file?.filename
+    image: req.file?.filename
   })
   if (error) {
     return res.status(422).json(error);
   }
   //Write user to database 
-  user
+  
   await userReport.create(value);
   //Respond to request
   res.status(201).json("report was Added!");
