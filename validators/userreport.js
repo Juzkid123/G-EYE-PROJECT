@@ -6,6 +6,6 @@ export const userReportValidator = Joi.object({
     description: Joi.string().required(),
     image: Joi.string(),
     location: Joi.string().required(),
-    map: Joi.string().required()
+    map: Joi.string()
 
 }).unknown()
