@@ -22,6 +22,15 @@ export const agentAvatarUpload = multer({
 });
 
 
+// export const reportFileUpload = multer({
+//   storage: multerSaveFilesOrg({
+//     apiAccessToken: process.env.SAVEVEFILEORG_API_KEY,
+//     relativePath: '/G-eye/file/*'
+//   }),
+//   preservePath: true
+// });
+
+
 // // Configure storage for uploaded files
 // const storage = multer.diskStorage({
 //   destination: (req, file, cb) => {
