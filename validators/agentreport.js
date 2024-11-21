@@ -16,7 +16,7 @@ export const agentReportValidator = Joi.object({
 }).unknown()
 
 export const updateAgentreportValidator = Joi.object({
-  description: Joi.string(),
+  // description: Joi.string(),
   location: Joi.string(),
   image: Joi.string(),
   notes: Joi.string()
