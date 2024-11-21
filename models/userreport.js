@@ -6,7 +6,7 @@ const userReportSchema = new mongoose.Schema({
     dateReported: { type: String },
     description: { type: String, required: true },
     email: { type: String, required: false},
-    image: { type: String, required: true },
+    image: { type: String },
     location: { type: String, required: true },
     // map: { type: String }
 },
