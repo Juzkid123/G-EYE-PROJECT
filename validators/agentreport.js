@@ -3,11 +3,11 @@ import Joi from 'joi';
 
 export const agentReportValidator = Joi.object({
   
-  title: Joi.string().required(),
-  description: Joi.string().required(),
+  agencyName: Joi.string().required(),
+ title: Joi.string().required(),
   dateReported: Joi.string().required(),
   location: Joi.string().required(),
-  map: Joi.string(),
+  // map: Joi.string(),
   image: Joi.string(),
   statusUpdate: Joi.string(),
   actionsTaken: Joi.string(),
