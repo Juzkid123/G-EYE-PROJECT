@@ -8,7 +8,7 @@ const userReportSchema = new mongoose.Schema({
     email: { type: String, required: false},
     image: { type: String, required: true },
     location: { type: String, required: true },
-    map: { type: String }
+    // map: { type: String }
 },
 { timestamps: true }
 );
