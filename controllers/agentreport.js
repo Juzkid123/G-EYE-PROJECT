@@ -26,7 +26,7 @@ export const addAgentReport = async (req, res, next) => {
 
 export const getAgentReports = async (req, res, next) => {
   try {
-    const { filter = "{}", limit = 10, skip = 0 } = req.query;
+    const { filter = "{}", limit = 50, skip = 0 } = req.query;
     // Fetch Agent report from database
     const AgentReportModel = await userReport
       .find(JSON.parse(filter))
